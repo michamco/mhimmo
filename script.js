@@ -1,16 +1,13 @@
-function berechnen() {
-    let flaeche = document.getElementById("flaeche").value;
-    let zustand = document.getElementById("zustand").value;
+function calc() {
+    let size = document.getElementById("size").value;
+    let condition = document.getElementById("condition").value;
 
-    if (!flaeche) {
-        document.getElementById("ergebnis").innerHTML = "Bitte Wohnfläche eingeben.";
-        return;
-    }
+    let base = 2500; // €/m² (Demo Ludwigshafen)
+    let value = size * base * condition;
+    let offer = value * 0.7; // -30%
 
-    let marktwert = flaeche * zustand;
-    let ankauf = marktwert * 0.7;
+    document.getElementById("result").innerText =
+        "Marktwert: " + value.toFixed(0) + " € | Unser Angebot: " + offer.toFixed(0) + " €";
 
-    document.getElementById("ergebnis").innerHTML =
-        "Geschätzter Marktwert: " + marktwert.toLocaleString() + " €<br>" +
-        "Möglicher Ankaufspreis: " + ankauf.toLocaleString() + " €";
+    document.getElementById("lead").style.display = "block";
 }

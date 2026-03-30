@@ -23,7 +23,9 @@ body {
 .logo {
     font-family: "Garamond", "Georgia", serif;
     font-size: 30px;
-    letter-spacing: 0.5px
+    letter-spacing: 0;
+    word-spacing: 0;
+    white-space: nowrap;
 }
 
 .gold { color: #b8963f; }

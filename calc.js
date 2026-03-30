@@ -18,7 +18,7 @@ function calc() {
     let nk = haus + vers + sonst;
 
     // Kreditrate
-    let kredit = (zins + tilgung) / 100 * kp;
+    let kredit = (zins + tilgung) / 100 * kp / 12;
 
     // Cashflow
     let cashflow = miete - kredit - nk;

@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
 
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background: #fff;
     color: #111;
+    background: #fff;
 }
 
-/* NAV */
+/* ===== NAV ===== */
 .nav {
     display: flex;
     justify-content: space-between;
@@ -20,17 +20,21 @@ body {
     z-index: 1000;
 }
 
+/* ===== LOGO (FIX FINAL) ===== */
 .logo {
-    font-family: "Garamond", "Georgia", serif;
-    font-size: 30px;
-    letter-spacing: -1;
-    word-spacing: 0;
+    font-family: "Garamond", serif;
+    font-size: 28px;
+    letter-spacing: -1px; /* 🔥 gewünschter 1px enger Look */
     white-space: nowrap;
+    display: flex;
+    align-items: baseline;
+    gap: 0;
 }
 
 .gold { color: #b8963f; }
 .blue { color: #1e3a8a; }
 
+/* NAV LINKS */
 .menu {
     display: flex;
     gap: 25px;
@@ -39,6 +43,7 @@ body {
 .menu a {
     text-decoration: none;
     color: #222;
+    font-weight: 500;
 }
 
 /* HAMBURGER */
@@ -65,11 +70,25 @@ body {
 }
 
 .overlay h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: Arial, sans-serif; /* bewusst modern / clean */
     font-size: 56px;
 }
 
-/* SECTIONS */
+.btn {
+    background: #1e3a8a;
+    color: white;
+    padding: 14px 28px;
+    display: inline-block;
+    text-decoration: none;
+    margin: 10px 5px;
+}
+
+.btn-gold {
+    background: #b8963f;
+    color: black;
+}
+
+/* SECTION */
 .section {
     max-width: 1200px;
     margin: auto;
@@ -89,23 +108,6 @@ body {
     object-fit: cover;
 }
 
-.card {
-    transition: 0.3s;
-}
-.card:hover {
-    transform: scale(1.02);
-}
-
-/* BUTTON */
-.btn {
-    background: #1e3a8a;
-    color: white;
-    padding: 14px 28px;
-    display: inline-block;
-    text-decoration: none;
-    margin-top: 20px;
-}
-
 /* FOOTER */
 footer {
     background: #0a0a0a;
@@ -114,8 +116,8 @@ footer {
     text-align: center;
 }
 
-/* MOBILE CTA */
-.mobile-cta {
+/* MOBILE ICONS */
+.mobile-icons {
     display: none;
 }
 
@@ -143,22 +145,24 @@ footer {
     }
 
     .overlay h1 {
-        font-size: 34px;
+        font-size: 32px;
     }
 
-    .mobile-cta {
+    .mobile-icons {
         display: flex;
         position: fixed;
-        bottom: 0;
-        width: 100%;
-        background: #1e3a8a;
+        top: 15px;
+        right: 15px;
+        gap: 10px;
+        z-index: 2000;
     }
 
-    .mobile-cta a {
-        flex: 1;
-        text-align: center;
-        padding: 15px;
+    .icon-btn {
+        background: #1e3a8a;
         color: white;
+        padding: 10px;
+        border-radius: 50%;
         text-decoration: none;
+        font-size: 14px;
     }
 }

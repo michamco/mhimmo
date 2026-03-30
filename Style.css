@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    font-family: "Times New Roman", serif;
+    background: white;
+    color: #002060;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: white;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.logo .gold { color: #C9A227; font-size: 28px; }
+.logo .blue { color: #002060; font-size: 28px; }
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #002060;
+    font-weight: bold;
+}
+
+nav .whatsapp {
+    color: white;
+    background: #25D366;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+    background: linear-gradient(to bottom, #002060, #001030);
+    color: white;
+}
+
+.cta {
+    background: #C9A227;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 18px;
+}
+
+.bewertung, .leistungen, .kontakt {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button {
+    background: #002060;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#ergebnis {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.whatsapp-large {
+    display: inline-block;
+    margin-top: 20px;
+    background: #25D366;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #002060;
+    color: white;
+}

@@ -1,10 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-  <title>Meine Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.H.IMMOBILIEN – Vermietung & Ankauf</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <h1>Hello 👋</h1>
-  <p>Meine erste Website mit Cloudflare Pages</p>
+
+<header>
+    <div class="logo">
+        <span class="gold">M.H.</span><span class="blue">IMMOBILIEN</span>
+    </div>
+    <nav>
+        <a href="#bewertung">Bewertung</a>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="https://wa.me/49XXXXXXXXX" class="whatsapp">WhatsApp</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Ihr Partner für Vermietung & Immobilienankauf in Ludwigshafen am Rhein</h1>
+    <p>Seit 2024 unterstützen wir Eigentümer zuverlässig beim Vermieten, Verkaufen und Bewerten ihrer Immobilien.</p>
+    <a href="#bewertung" class="cta">Kostenlose Schätzung starten</a>
+</section>
+
+<section id="bewertung" class="bewertung">
+    <h2>Kostenlose Immobilien‑Schätzung</h2>
+    <p>Erhalten Sie eine erste Einschätzung zum Marktwert Ihrer Immobilie. Anschließend berechnen wir automatisch einen realistischen Ankaufspreis (30% Abschlag).</p>
+
+    <div class="form-container">
+        <label>Wohnfläche (m²)</label>
+        <input type="number" id="flaeche">
+
+        <label>Zustand</label>
+        <select id="zustand">
+            <option value="5000">Sehr gut</option>
+            <option value="4000">Gut</option>
+            <option value="3000">Renovierungsbedürftig</option>
+        </select>
+
+        <button onclick="berechnen()">Schätzung anzeigen</button>
+
+        <div id="ergebnis"></div>
+    </div>
+</section>
+
+<section id="leistungen" class="leistungen">
+    <h2>Unsere Leistungen</h2>
+    <ul>
+        <li><strong>Vermietung:</strong> Mieterauswahl, Verträge, Übergaben.</li>
+        <li><strong>Ankauf:</strong> Wohnungen, Häuser, Mehrfamilienhäuser.</li>
+        <li><strong>Bewertung:</strong> Marktanalyse & transparente Einschätzung.</li>
+    </ul>
+</section>
+
+<section id="kontakt" class="kontakt">
+    <h2>Kontakt</h2>
+    <form>
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="E-Mail">
+        <input type="text" placeholder="Telefon">
+        <textarea placeholder="Ihre Nachricht"></textarea>
+        <button>Absenden</button>
+    </form>
+
+    <a href="https://wa.me/49XXXXXXXXX" class="whatsapp-large">Direkt per WhatsApp</a>
+</section>
+
+<footer>
+    <p>M.H.IMMOBILIEN – Ludwigshafen am Rhein</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

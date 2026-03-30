@@ -23,7 +23,7 @@ body {
 .logo {
     font-family: "Garamond", "Georgia", serif;
     font-size: 30px;
-    letter-spacing: 0;
+    letter-spacing: -1;
     word-spacing: 0;
     white-space: nowrap;
 }

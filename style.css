@@ -1,89 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap');
+
 body {
     margin: 0;
-    font-family: "Times New Roman", serif;
+    font-family: 'Inter', sans-serif;
     background: #fff;
     color: #111;
 }
 
-nav {
+/* NAV */
+.nav {
     display: flex;
     justify-content: space-between;
-    padding: 20px 40px;
-    border-bottom: 1px solid #eee;
-}
-
-.logo { font-size: 28px; }
-.gold { color: gold; }
-.blue { color: royalblue; }
-
-.hero {
-    height: 90vh;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    background: linear-gradient(#fff, #eef3ff);
-}
-
-.hero h1 { font-size: 52px; }
-
-.section {
-    max-width: 1100px;
-    margin: auto;
-    padding: 80px 20px;
-}
-
-.highlight {
-    background: #f9fbff;
-    border-top: 2px solid gold;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap: 20px;
-}
-
-.card {
-    padding: 30px;
-    border: 1px solid #eee;
-    transition: 0.3s;
-}
-.card:hover {
-    transform: translateY(-5px);
-}
-
-input, select, textarea {
+    padding: 25px 50px;
+    position: fixed;
     width: 100%;
-    padding: 14px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
 }
 
-.btn {
-    background: royalblue;
-    color: white;
-    padding: 14px 30px;
-    border: none;
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+}
+
+.gold { color: #b8963f; }
+.blue { color: #1e3a8a; }
+
+.menu {
+    display: flex;
+    gap: 25px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #222;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
     cursor: pointer;
 }
 
-.gold-btn {
-    background: gold;
-    color: black;
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* WhatsApp Auswahl */
-.wa-box {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: white;
-    border: 1px solid #ddd;
+.overlay {
+    background: rgba(0,0,0,0.45);
+    padding: 60px;
+    color: white;
+    text-align: center;
 }
-.wa-box a {
-    display: block;
-    padding: 10px;
+
+.overlay h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+}
+
+/* SECTIONS */
+.section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 120px 20px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: 30px;
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card {
+    transition: 0.3s;
+}
+.card:hover {
+    transform: scale(1.02);
+}
+
+/* BUTTON */
+.btn {
+    background: #1e3a8a;
+    color: white;
+    padding: 14px 28px;
+    display: inline-block;
     text-decoration: none;
-    color: black;
+    margin-top: 20px;
+}
+
+/* FOOTER */
+footer {
+    background: #0a0a0a;
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+/* MOBILE CTA */
+.mobile-cta {
+    display: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: white;
+        flex-direction: column;
+        padding: 100px 30px;
+        transition: 0.4s;
+    }
+
+    .menu.active {
+        right: 0;
+    }
+
+    .overlay h1 {
+        font-size: 34px;
+    }
+
+    .mobile-cta {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: #1e3a8a;
+    }
+
+    .mobile-cta a {
+        flex: 1;
+        text-align: center;
+        padding: 15px;
+        color: white;
+        text-decoration: none;
+    }
 }

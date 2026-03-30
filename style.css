@@ -171,6 +171,23 @@ footer {
     gap: 15px;
 }
 
+    .calc-grid input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+h1 {
+    font-family: Arial, sans-serif;
+}
+
+hr {
+    margin: 30px 0;
+    border: none;
+    height: 1px;
+    background: #eee;
+}
+
 .calc-grid input {
     padding: 12px;
     border: 1px solid #ddd;

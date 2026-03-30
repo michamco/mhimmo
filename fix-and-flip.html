@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fix & Flip Rechner</title>
+
+<link rel="stylesheet" href="style.css">
+<script defer src="flip.js"></script>
+</head>
+
+<body>
+
+<nav class="nav">
+    <div class="logo">
+        <span class="gold">M.H.</span><span class="blue">IMMOBILIEN</span>
+    </div>
+</nav>
+
+<section class="section">
+
+<h1>Fix & Flip Rechner</h1>
+
+<div class="calc-grid">
+
+    <input id="vmin" placeholder="Verkaufspreis MIN €">
+    <input id="vmax" placeholder="Verkaufspreis MAX €">
+    <input id="vavg" placeholder="Verkaufspreis DURCHSCHNITT €">
+
+    <input id="qm" placeholder="Quadratmeter">
+    <input id="zimmer" placeholder="Zimmer">
+
+    <button class="btn" onclick="calcFlip()">Berechnen</button>
+
+</div>
+
+<hr>
+
+<h2>Ergebnisse</h2>
+
+<p id="marge"></p>
+<p id="entsorgung"></p>
+<p id="elektrik"></p>
+<p id="boden"></p>
+<p id="waende"></p>
+<p id="bad"></p>
+<p id="renovierung"></p>
+<p id="nebenkosten"></p>
+<p id="gewinn"></p>
+<p id="ziel"></p>
+
+</section>
+
+</body>
+</html>

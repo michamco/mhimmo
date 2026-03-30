@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kalkulation</title>
+
+<link rel="stylesheet" href="style.css">
+<script defer src="calc.js"></script>
+
+</head>
+
+<body>
+
+<nav class="nav">
+    <div class="logo">
+        <span class="gold">M.H.</span><span class="blue">IMMOBILIEN</span>
+    </div>
+</nav>
+
+<section class="section">
+
+<h1>Kalkulation</h1>
+
+<div class="calc-grid">
+
+    <input id="kp" placeholder="Kaufpreis €">
+    <input id="qm" placeholder="Quadratmeter">
+    <input id="eurqm" placeholder="€/m² Miete">
+
+    <input id="zins" placeholder="Zins %">
+    <input id="tilgung" placeholder="Tilgung %">
+
+    <input id="haus" placeholder="Hausverwaltung €">
+    <input id="versicherung" placeholder="Mietausfallversicherung €">
+    <input id="sonst" placeholder="Sonstige Kosten €">
+
+    <button class="btn" onclick="calc()">Berechnen</button>
+
+</div>
+
+<hr>
+
+<h2>Ergebnis</h2>
+
+<p id="miete"></p>
+<p id="nk"></p>
+<p id="kredit"></p>
+<p id="cashflow"></p>
+
+<hr>
+
+<h2>Steuer-Rechner</h2>
+
+<input id="lohnsteuer" placeholder="Lohnsteuer €">
+<input id="afa" placeholder="AfA % (Standard 2%)">
+
+<button class="btn" onclick="tax()">Steuer berechnen</button>
+
+<p id="steuer"></p>
+
+<hr>
+
+<h2>Wertzuwachs</h2>
+
+<p id="growth"></p>
+
+</section>
+
+</body>
+</html>

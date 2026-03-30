@@ -1,1 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ankauf</title>
 
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
+</head>
+
+<body>
+
+<nav class="nav">
+    <div class="logo"><span class="gold">M.H.</span> <span class="blue">IMMOBILIEN</span></div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div id="menu" class="menu">
+        <a href="index.html">Home</a>
+        <a href="ankauf.html">Ankauf</a>
+        <a href="kontakt.html">Kontakt</a>
+    </div>
+</nav>
+
+<section class="section">
+    <h1>Immobilie bewerten</h1>
+
+    <input id="size" placeholder="Wohnfläche m²">
+    <input id="rooms" placeholder="Zimmer">
+
+    <select id="condition">
+        <option value="0.8">Alt</option>
+        <option value="1">Normal</option>
+        <option value="1.4">Neu</option>
+    </select>
+
+    <button class="btn" onclick="calc()">Berechnen</button>
+
+    <h2 id="result"></h2>
+</section>
+
+<script>
+function calc() {
+    let size = document.getElementById("size").value;
+    let rooms = document.getElementById("rooms").value;
+    let condition = document.getElementById("condition").value;
+
+    let base = 2500;
+    let value = size * base * condition + rooms * 8000;
+    let offer = value * 0.7;
+
+    document.getElementById("result").innerText =
+        "Marktwert: " + value.toFixed(0) + " € | Angebot: " + offer.toFixed(0) + " €";
+}
+</script>
+
+</body>
+</html>

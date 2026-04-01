@@ -13,36 +13,44 @@ body {
     overflow-x: hidden;
 }
 
-/* ===== LOGO ANPASSUNG (FILIGRAN & KLEINER) ===== */
+/* ===== LOGO ANPASSUNG (ZENTRIERT & ENGER) ===== */
 .logo {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 32px; /* Kleiner als vorher */
-    font-weight: 400; /* Filigraner */
-    letter-spacing: 1px; /* Enger beieinander */
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: -0.5px; /* Schrift enger zusammen */
     text-transform: uppercase;
     display: flex;
     align-items: baseline;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .gold { color: var(--gold); }
 .blue { color: var(--blue); }
 
-/* NAVIGATION */
+/* NAVIGATION (GRID FÜR ZENTRIERUNG) */
 .nav {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* Links leer | Mitte Logo | Rechts Icons */
     align-items: center;
     padding: 15px 40px;
     position: fixed;
     top: 0; width: 100%;
-    background: rgba(255,255,255,0.95);
+    background: rgba(255,255,255,0.98);
     z-index: 1000;
     box-shadow: 0 1px 10px rgba(0,0,0,0.05);
     box-sizing: border-box;
 }
 
-.nav-right { display: flex; align-items: center; gap: 20px; }
+.nav-spacer { display: block; } /* Nur für Desktop-Layout wichtig */
+
+.nav-right { 
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-end; 
+    gap: 20px; 
+}
 
 .mobile-icons a {
     color: var(--blue);
@@ -53,32 +61,28 @@ body {
 
 .menu-toggle { font-size: 28px; cursor: pointer; color: var(--blue); }
 
-/* SIDENAV */
-.sidenav {
-    height: 100vh; width: 0;
-    position: fixed; z-index: 2000;
-    top: 0; right: 0;
-    background: var(--blue);
-    overflow-x: hidden;
-    transition: 0.4s;
-    padding-top: 80px;
-    text-align: center;
+/* FOOTER & HYPERLINKS */
+footer { 
+    padding: 40px 20px; 
+    text-align: center; 
+    background: #0e142b; 
+    color: #999; 
 }
 
-.sidenav.active { width: 300px; }
-.sidenav a { color: white; text-decoration: none; display: block; padding: 15px; font-size: 20px; }
-.close-btn { position: absolute; top: 20px; right: 30px; font-size: 35px; color: white; cursor: pointer; }
-
-/* HERO */
-.hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600') center/cover;
-    display: flex; align-items: center; justify-content: center;
-    color: white; text-align: center;
+footer a {
+    color: rgba(255, 255, 255, 0.6); /* Weiß-Transparent statt Blau */
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
 }
 
-.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 50px; margin-bottom: 10px; }
-.hero p { font-size: 18px; margin-bottom: 30px; }
+footer a:hover { color: var(--white); }
+
+.impressum-link {
+    display: block;
+    margin-top: 15px;
+    opacity: 0.5; /* "Etwas versteckt" Look */
+}
 
 /* SECTIONS */
 .section { padding: 100px 20px; }
@@ -87,20 +91,55 @@ body {
 .container { max-width: 1100px; margin: auto; }
 
 .split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-.image-box img { width: 100%; border-radius: 2px; }
+.image-box img { width: 100%; border-radius: 2px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
 
 /* BUTTONS */
 .btn { padding: 14px 28px; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.3s; }
 .btn-blue { background: var(--blue); color: white; }
 .btn-gold { background: var(--gold); color: white; }
 
-/* FOOTER */
-footer { padding: 30px; text-align: center; background: #0e142b; color: #777; font-size: 14px; }
+/* CONTACT LINKS (WEISS STATT BLAU) */
+.contact-grid a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
 
+/* IMPRESSUM MODAL STYLES */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 3000; 
+    left: 0; top: 0; width: 100%; height: 100%; 
+    background-color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 40px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 4px;
+    position: relative;
+    color: #333;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px; right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
+    .nav { grid-template-columns: auto 1fr; } /* Mobil: Logo links, Icons rechts */
+    .nav-spacer { display: none; }
     .split-grid { grid-template-columns: 1fr; }
-    .split-grid.reverse .image-box { order: 2; }
-    .split-grid.reverse .text-box { order: 1; }
     .logo { font-size: 22px; }
-    .hero h1 { font-size: 36px; }
+    .hero h1 { font-size: 34px; }
+    .modal-content { margin: 30% auto; }
 }

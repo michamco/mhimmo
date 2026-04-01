@@ -5,9 +5,8 @@
     --white: #ffffff;
 }
 
-/* SLIDE EFFEKT CONFIG */
 html {
-    scroll-behavior: smooth; /* Aktiviert das sanfte Sliden */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -17,7 +16,7 @@ body {
     overflow-x: hidden;
 }
 
-/* LOGO (Zentriert & Eng) */
+/* LOGO */
 .logo {
     font-family: 'Cormorant Garamond', serif;
     font-size: 32px;
@@ -45,8 +44,18 @@ body {
 }
 .nav-spacer { display: block; }
 .nav-right { display: flex; align-items: center; justify-content: flex-end; gap: 20px; }
-.mobile-icons a { color: var(--blue); font-size: 20px; margin-left: 15px; }
-.menu-toggle { font-size: 28px; cursor: pointer; color: var(--blue); }
+
+/* HAMBURGER BUTTON (FIXED) */
+.menu-toggle { 
+    font-size: 35px; 
+    cursor: pointer; 
+    color: var(--blue) !important; /* Kräftiges Blau */
+    display: block;
+    z-index: 1001;
+    line-height: 1;
+}
+
+.mobile-icons a { color: var(--blue); font-size: 20px; margin-left: 15px; text-decoration: none; }
 
 /* SIDENAV */
 .sidenav {
@@ -60,52 +69,46 @@ body {
     text-align: center;
 }
 .sidenav.active { width: 300px; }
-.sidenav a { color: white; text-decoration: none; display: block; padding: 15px; font-size: 20px; font-weight: 600; transition: 0.3s; }
-.sidenav a:hover { color: var(--gold); }
+.sidenav a { color: white; text-decoration: none; display: block; padding: 15px; font-size: 20px; font-weight: 600; }
 .close-btn { position: absolute; top: 20px; right: 30px; font-size: 35px; color: white; cursor: pointer; }
 
-/* HERO & SECTIONS */
+/* SECTIONS */
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600') center/cover;
     display: flex; align-items: center; justify-content: center; color: white; text-align: center;
 }
-.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 56px; }
+.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 56px; margin: 0; }
 .section { padding: 100px 20px; }
 .bg-light { background: var(--light); }
-.bg-blue { background: var(--blue); color: white; padding-top: 120px; padding-bottom: 120px; }
+.bg-blue { background: var(--blue); color: white; }
 .container { max-width: 1100px; margin: auto; }
 .split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
 .image-box img { width: 100%; border-radius: 2px; }
 
 /* KONTAKT LINKS (WEISS) */
-.white-link {
-    color: white !important;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 24px;
-    display: block;
-    margin: 10px 0;
-    transition: 0.3s;
-}
-.white-link:hover { color: var(--gold) !important; }
+.white-link { color: white !important; text-decoration: none; font-weight: 600; font-size: 24px; display: block; margin: 15px 0; }
 
 /* BUTTONS */
-.btn { padding: 14px 28px; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.3s; border-radius: 2px; }
+.btn { padding: 14px 28px; text-decoration: none; font-weight: 600; display: inline-block; border-radius: 2px; transition: 0.3s; }
 .btn-blue { background: var(--blue); color: white; border: 1px solid white; }
 .btn-gold { background: var(--gold); color: white; }
 
-/* FOOTER & MODAL */
+/* FOOTER */
 footer { padding: 40px; text-align: center; background: #0e142b; color: #999; }
 .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 12px; }
+.sep { margin: 0 10px; }
+
+/* MODAL */
 .modal { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); }
 .modal-content { background: white; margin: 10% auto; padding: 40px; width: 85%; max-width: 450px; border-radius: 4px; position: relative; color: #333; }
+.close-modal { position: absolute; top: 10px; right: 20px; font-size: 30px; cursor: pointer; }
 
 @media (max-width: 768px) {
     .nav { grid-template-columns: auto 1fr; padding: 15px 20px; }
     .nav-spacer { display: none; }
     .split-grid { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 38px; }
-    .logo { font-size: 24px; }
-    .white-link { font-size: 18px; }
+    .hero h1 { font-size: 36px; }
+    .logo { font-size: 22px; }
+    .sidenav.active { width: 100%; }
 }

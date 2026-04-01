@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M.H. IMMOBILIEN | Ankauf & Vermietung</title>
+    <title>M.H.IMMOBILIEN | Ankauf & Vermietung</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
@@ -16,6 +16,8 @@
 <body>
 
     <nav class="nav">
+        <div class="nav-spacer"></div>
+
         <div class="logo">
             <span class="gold">M.H.</span><span class="blue">IMMOBILIEN</span>
         </div>
@@ -55,7 +57,7 @@
                 <div class="split-grid">
                     <div class="text-box" data-aos="fade-right">
                         <h2>Wer wir sind</h2>
-                        <p>M.H. Immobilien ist kein Maklerhaus. Wir sind <strong>Bestandshalter</strong>. Unser Fokus liegt auf dem Ankauf von Immobilien für das eigene Portfolio und der langfristigen, fairen Vermietung in Ludwigshafen und Umgebung.</p>
+                        <p><strong>M.H.IMMOBILIEN</strong> ist kein Maklerbuero. Wir sind <strong>Bestandshalter</strong>. Unser Fokus liegt auf dem Ankauf von Immobilien für das eigene Portfolio und der langfristigen, fairen Vermietung in Ludwigshafen und Umgebung.</p>
                         <p>Wir verkaufen nicht weiter – wir bewahren Werte. Als lokales Unternehmen entscheiden wir schnell und unkompliziert.</p>
                     </div>
                     <div class="image-box" data-aos="fade-left">
@@ -110,8 +112,23 @@
     </main>
 
     <footer>
-        <p>© 2026 M.H. IMMOBILIEN</p>
+        <div class="container">
+            <p>© 2026 M.H.IMMOBILIEN</p>
+            <a href="javascript:void(0)" class="impressum-link" onclick="toggleImpressum()">Impressum</a>
+        </div>
     </footer>
+
+    <div id="impressum-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="toggleImpressum()">&times;</span>
+            <h3>Impressum</h3>
+            <p><strong>M.H.IMMOBILIEN</strong></p>
+            <p>67063 Ludwigshafen am Rhein</p>
+            <p>(Adresse auf Anfrage)</p>
+            <p>Tel: 015226985548</p>
+            <p>E-Mail: hallo@mhimmobilien.com</p>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </body>

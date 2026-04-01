@@ -1,30 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
 
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
     color: #111;
     background: #fff;
+    scroll-behavior: smooth; /* Glattes Scrollen */
+    overflow-x: hidden; /* Verhindert seitliches Scrollen bei Animationen */
 }
 
-/* ===== NAV ===== */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* ===== NAV (FIXED TOP) ===== */
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 50px;
+    padding: 15px 50px;
     position: fixed;
+    top: 0;
     width: 100%;
     background: rgba(255,255,255,0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
+    box-sizing: border-box;
 }
 
-/* ===== LOGO (FIX FINAL) ===== */
+/* ===== LOGO (ÜBERARBEITET) ===== */
 .logo {
-    font-family: "Garamond", serif;
+    font-family: 'Inter', sans-serif; /* Gleiche Schrift wie Rest */
     font-size: 28px;
-    letter-spacing: -1px; /* 🔥 gewünschter 1px enger Look */
+    font-weight: 700; /* Dick */
+    letter-spacing: normal; /* Normaler Abstand */
     white-space: nowrap;
     display: flex;
     align-items: baseline;
@@ -34,44 +45,97 @@ body {
 .gold { color: #b8963f; }
 .blue { color: #1e3a8a; }
 
-/* NAV LINKS */
-.menu {
+/* ===== NAVIGATION RECHTS ===== */
+.nav-right {
     display: flex;
-    gap: 25px;
-}
-
-.menu a {
-    text-decoration: none;
-    color: #222;
-    font-weight: 500;
+    align-items: center;
+    gap: 20px;
 }
 
 /* HAMBURGER */
 .menu-toggle {
-    display: none;
     font-size: 30px;
+    cursor: pointer;
+    display: block; /* Hamburger ist immer da */
+}
+
+/* ===== SIDENAV (SEITENMENÜ) ===== */
+.sidenav {
+    height: 100%;
+    width: 0; /* Standardmäßig eingeklappt */
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    right: 0;
+    background-color: #0a0a0a;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.sidenav a {
+    padding: 15px;
+    text-decoration: none;
+    font-size: 22px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.sidenav a:hover {
+    color: #b8963f;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 40px;
+    color: white;
     cursor: pointer;
 }
 
-/* HERO */
+/* ===== SIDENAV AKTIV ===== */
+.sidenav.active {
+    width: 300px; /* Breite im ausgeklappten Zustand */
+}
+
+/* ===== HERO ===== */
 .hero {
     height: 100vh;
-    background: url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d') center/cover;
+    background: url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=cover') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 80px; /* Platz für fixierte Nav */
+    box-sizing: border-box;
 }
 
 .overlay {
-    background: rgba(0,0,0,0.45);
+    background: rgba(0,0,0,0.5);
     padding: 60px;
     color: white;
     text-align: center;
 }
 
 .overlay h1 {
-    font-family: Arial, sans-serif; /* bewusst modern / clean */
+    font-family: 'Inter', sans-serif;
     font-size: 56px;
+    margin-top: 0;
+}
+
+.overlay p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.hero-btns {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 .btn {
@@ -81,6 +145,9 @@ body {
     display: inline-block;
     text-decoration: none;
     margin: 10px 5px;
+    transition: 0.3s;
+    font-weight: 500;
+    border-radius: 4px;
 }
 
 .btn-gold {
@@ -88,27 +155,133 @@ body {
     color: black;
 }
 
-/* SECTION */
-.section {
-    max-width: 1200px;
-    margin: auto;
-    padding: 120px 20px;
+.btn:hover {
+    opacity: 0.8;
 }
 
-/* GRID */
+/* ===== SECTION ALLGEMEIN ===== */
+.section {
+    padding: 120px 0;
+    box-sizing: border-box;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 60px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ===== ÜBER UNS ===== */
+.section-about {
+    background-color: #f9f9f9;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* ===== OBJEKTE GRID ===== */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
     gap: 30px;
 }
 
+.card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
 .card img {
     width: 100%;
-    height: 220px;
+    height: 250px;
     object-fit: cover;
 }
 
-/* FOOTER */
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    margin-top: 0;
+}
+
+/* ===== ANKAUF / MIETER SPLIT-GRID ===== */
+.grid-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.grid-split.reverse .image {
+    order: 2;
+}
+
+.grid-split.reverse .text {
+    order: 1;
+}
+
+.grid-split .image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.grid-split .text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* ===== KONTAKT ===== */
+.section-kontakt {
+    background-color: #f9f9f9;
+}
+
+.contact-grid {
+    text-align: center;
+}
+
+.contact-info {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.contact-info i {
+    color: #1e3a8a;
+    margin-right: 10px;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: #222;
+    transition: 0.3s;
+}
+
+.contact-info a:hover {
+    color: #b8963f;
+}
+
+/* ===== FOOTER ===== */
 footer {
     background: #0a0a0a;
     color: white;
@@ -116,89 +289,58 @@ footer {
     text-align: center;
 }
 
-/* MOBILE ICONS */
+/* ===== MOBILE ICONS (OBEN RECHTS) ===== */
 .mobile-icons {
-    display: none;
+    display: flex;
+    gap: 10px;
 }
 
-/* RESPONSIVE */
+.icon-btn {
+    background: #1e3a8a;
+    color: white !important;
+    padding: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 16px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.icon-btn.whatsapp {
+    background-color: #25D366; /* WhatsApp-Grün */
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .overlay h1 { font-size: 48px; }
+    .nav { padding: 15px 30px; }
+}
+
 @media (max-width: 768px) {
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        height: 100vh;
-        background: white;
-        flex-direction: column;
-        padding: 100px 30px;
-        transition: 0.4s;
-    }
-
-    .menu.active {
-        right: 0;
-    }
-
-    .overlay h1 {
-        font-size: 32px;
-    }
-
-    .mobile-icons {
-        display: flex;
-        position: fixed;
-        top: 15px;
-        right: 15px;
-        gap: 10px;
-        z-index: 2000;
-    }
-
-    .icon-btn {
-        background: #1e3a8a;
-        color: white;
-        padding: 10px;
-        border-radius: 50%;
-        text-decoration: none;
-        font-size: 14px;
-    }
-.calc-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-    .calc-grid input {
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
-
-h1 {
-    font-family: Arial, sans-serif;
-}
-
-hr {
-    margin: 30px 0;
-    border: none;
-    height: 1px;
-    background: #eee;
-}
-
-.calc-grid input {
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
-
-hr {
-    margin: 30px 0;
-    border: none;
-    height: 1px;
-    background: #eee;
-}
+    .nav { padding: 10px 20px; }
+    .logo { font-size: 24px; }
     
+    .hero { padding-top: 70px; }
+    .overlay h1 { font-size: 36px; }
+    .hero-btns { flex-direction: column; gap: 0; }
+    .overlay { padding: 40px 20px; }
+    
+    .section { padding: 80px 0; }
+    .section h2 { font-size: 32px; }
+    
+    .about-grid, .grid-split {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .grid-split.reverse .image { order: 1; }
+    .grid-split.reverse .text { order: 2; }
+    
+    .sidenav.active {
+        width: 100%; /* Menü nimmt vollen Bildschirm ein auf Handy */
+    }
 }

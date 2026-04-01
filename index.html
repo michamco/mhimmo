@@ -1,74 +1,145 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>M.H. Immobilien</title>
-
-<link rel="stylesheet" href="style.css">
-<script defer src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.H. Immobilien</title>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
-
 <body>
 
-<!-- NAV -->
-<nav class="nav">
-
-    <div class="logo">
-        <span class="gold">M.H.</span><span class="blue">IMMOBILIEN</span>
-    </div>
-
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-    <div id="menu" class="menu">
-        <a href="index.html">Home</a>
-        <a href="about.html">Über uns</a>
-        <a href="mieter.html">Mieter</a>
-        <a href="ankauf.html">Ankauf</a>
-        <a href="kontakt.html">Kontakt</a>
-    </div>
-
-    <a href="kalkulation.html" class="hidden-link">•</a>
-</nav>
-
-<!-- MOBILE ICONS -->
-<div class="mobile-icons">
-    <a class="icon-btn" href="tel:+49123456789">📞</a>
-    <a class="icon-btn" href="mailto:info@mh-immobilien.de">✉️</a>
-</div>
-
-<!-- HERO -->
-<section class="hero">
-    <div class="overlay">
-        <h1>Exklusive Immobilien in Ludwigshafen</h1>
-        <p>Seit 2024 im Immobilienmarkt tätig</p>
-
-        <a class="btn" href="ankauf.html">Immobilie verkaufen</a>
-        <a class="btn btn-gold" href="mieter.html">Immobilie mieten</a>
-    </div>
-</section>
-
-<!-- CONTENT -->
-<section class="section">
-    <h2>Ausgewählte Objekte</h2>
-
-    <div class="grid">
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
-            <h3>Wohnung</h3>
+    <nav class="nav">
+        <div class="logo">
+            <span class="gold">M.H.</span><span class="blue">IMMOBILIEN</span>
         </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be">
-            <h3>Haus</h3>
+        
+        <div class="nav-right">
+            <div class="mobile-icons">
+                <a class="icon-btn" href="tel:+4915226985548"><i class="fas fa-phone-alt"></i></a>
+                <a class="icon-btn" href="mailto:hallo@mhimmobilien.com"><i class="fas fa-envelope"></i></a>
+                <a class="icon-btn whatsapp" href="https://wa.me/4915226985548" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         </div>
+    </nav>
+
+    <div id="menu" class="sidenav">
+        <div class="close-btn" onclick="toggleMenu()">&times;</div>
+        <a href="#hero" onclick="toggleMenu()">Home</a>
+        <a href="#about" onclick="toggleMenu()">Über uns</a>
+        <a href="#objects" onclick="toggleMenu()">Ausgewählte Objekte</a>
+        <a href="#ankauf" onclick="toggleMenu()">Immobilie verkaufen</a>
+        <a href="#mieter" onclick="toggleMenu()">Immobilie mieten</a>
+        <a href="#kontakt" onclick="toggleMenu()">Kontakt</a>
     </div>
-</section>
 
-<footer>
-    © 2026 M.H. Immobilien
-</footer>
+    <main>
 
+        <section id="hero" class="hero">
+            <div class="overlay" data-aos="fade-up" data-aos-duration="1000">
+                <h1>Exklusive Immobilien in Ludwigshafen</h1>
+                <p>Ihr Partner für diskreten Ankauf und professionelle Vermietung. Seit 2023 im Immobilienmarkt tätig.</p>
+                <div class="hero-btns">
+                    <a class="btn" href="#ankauf">Immobilie verkaufen</a>
+                    <a class="btn btn-gold" href="#mieter">Immobilie mieten</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section section-about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text" data-aos="fade-right">
+                        <h2>Über uns</h2>
+                        <p>Herzlich willkommen bei M.H. Immobilien, Ihrem kompetenten Partner für Immobilienangelegenheiten in Ludwigshafen und der Region. Seit 2023 engagieren wir uns leidenschaftlich dafür, Käufer und Verkäufer sowie Mieter und Vermieter erfolgreich zusammenzubringen.</p>
+                        <p>Unser Fokus liegt auf einem diskreten Ankauf und einer professionellen Vermietung, bei der wir stets auf die individuellen Bedürfnisse unserer Kunden eingehen. Mit fundierter Marktkenntnis und einem breiten Netzwerk sind wir bestrebt, Ihre Immobiliengestaltung zum Erfolg zu führen.</p>
+                    </div>
+                    <div class="about-image" data-aos="fade-left">
+                        <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1992&auto=format&fit=cover" alt="Modernes Bürogebäude">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="objects" class="section section-objects">
+            <div class="container">
+                <h2>Ausgewählte Objekte</h2>
+                <div class="grid">
+                    <div class="card" data-aos="flip-left">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=cover">
+                        <div class="card-content">
+                            <h3>Moderne Wohnung</h3>
+                            <p>3 Zimmer, Balkon, Top-Lage</p>
+                        </div>
+                    </div>
+
+                    <div class="card" data-aos="flip-right">
+                        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2070&auto=format&fit=cover">
+                        <div class="card-content">
+                            <h3>Einfamilienhaus</h3>
+                            <p>Garten, Garage, ruhige Gegend</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ankauf" class="section section-ankauf">
+            <div class="container">
+                <div class="grid-split">
+                    <div class="image" data-aos="fade-right">
+                        <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=2070&auto=format&fit=cover" alt="Schlüsselübergabe zwischen Männern">
+                    </div>
+                    <div class="text" data-aos="fade-left">
+                        <h2>Immobilie verkaufen</h2>
+                        <p>Möchten Sie Ihre Immobilie in Ludwigshafen oder der Region verkaufen? Vertrauen Sie auf M.H. Immobilien für eine schnelle und unkomplizierte Abwicklung. Wir bieten Ihnen einen fairen Marktpreis und garantieren Diskretion.</p>
+                        <p>Unsere tiefe Verwurzelung in der Region und unsere umfassende Marktkenntnis machen uns zur ersten Wahl für Ihren Immobilienverkauf. Profitieren Sie von unserer Expertise und lassen Sie uns den Verkauf Ihrer Immobilie erfolgreich realisieren.</p>
+                        <a class="btn btn-gold" href="#kontakt">Kontaktieren Sie uns</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mieter" class="section section-mieter">
+            <div class="container">
+                <div class="grid-split reverse">
+                    <div class="image" data-aos="fade-left">
+                        <img src="https://images.unsplash.com/photo-1556911220-e15204da47b7?q=80&w=2070&auto=format&fit=cover" alt="Mann im Anzug gibt Schlüssel an Familie mit Kind">
+                    </div>
+                    <div class="text" data-aos="fade-right">
+                        <h2>Immobilie mieten</h2>
+                        <p>Sind Sie auf der Suche nach einer passenden Mietwohnung in Ludwigshafen oder Mannheim? Wir unterstützen Sie dabei, Ihr neues Zuhause zu finden.</p>
+                        <p>Auch wenn Sie bereits Mieter bei uns sind und ein Anliegen haben, stehen wir Ihnen gerne zur Verfügung. Unser Team ist stets bemüht, Ihre Anfragen schnell und effizient zu bearbeiten.</p>
+                        <a class="btn" href="#kontakt">Mieter-Service kontaktieren</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="kontakt" class="section section-kontakt">
+            <div class="container">
+                <h2 data-aos="fade-up">Kontakt</h2>
+                <div class="contact-grid" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-info">
+                        <h3>Erreichen Sie uns</h3>
+                        <p><i class="fas fa-phone-alt"></i> Telefon: <a href="tel:+4915226985548">0152 269 85548</a></p>
+                        <p><i class="fas fa-envelope"></i> E-Mail: <a href="mailto:hallo@mhimmobilien.com">hallo@mhimmobilien.com</a></p>
+                        <p><i class="fab fa-whatsapp whatsapp-icon"></i> WhatsApp: <a href="https://wa.me/4915226985548" target="_blank">0152 269 85548</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        © 2026 M.H. Immobilien
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </body>
 </html>

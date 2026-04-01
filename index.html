@@ -15,7 +15,9 @@
 <body>
 
     <nav class="nav">
-        <div class="nav-spacer"></div> <div class="logo">
+        <div class="nav-spacer"></div> 
+
+        <div class="logo">
             <span class="gold">M.H.</span><span class="blue">IMMOBILIEN</span>
         </div>
         
@@ -69,7 +71,7 @@
                 <div class="split-grid reverse">
                     <div class="text-box" data-aos="fade-left">
                         <h2>Immobilie an uns verkaufen</h2>
-                        <p>Suchen Sie einen Käufer ohne Umwege? Wir kaufen Wohnungen und Häuser direkt an. Das bedeutet für Sie: <strong>Keine Maklerkosten</strong>, keine Massenbesichtigungen und eine diskrete Abwicklung.</p>
+                        <p>Suchen Sie einen Käufer ohne Umwege? Wir kaufen Wohnungen und Häuser direkt an. Das bedeutet für Sie: <strong>Keine Maklerkosten</strong> und eine diskrete Abwicklung.</p>
                         <p>Egal ob sanierungsbedürftig oder topgepflegt – wir machen Ihnen ein faires Angebot für Ihre Immobilie in der Region Ludwigshafen am Rhein.</p>
                         <a class="btn btn-blue" href="#kontakt">Jetzt Angebot anfragen</a>
                     </div>
@@ -86,11 +88,11 @@
                     <div class="text-box" data-aos="fade-right">
                         <h2>Mieten & Mieterservice</h2>
                         <p>Ein gutes Zuhause ist die Basis für Lebensqualität. Wir vermieten Wohnraum in Ludwigshafen zu fairen Preisen und pflegen einen direkten Draht zu unseren Mietern.</p>
-                        <p><strong>Bestehende Mieter:</strong> Bei Anliegen erreichen Sie uns unbürokratisch via WhatsApp oder E-Mail. Wir kümmern uns persönlich um unsere Bestände.</p>
+                        <p><strong>Bestehende Mieter:</strong> Bei Anliegen erreichen Sie uns unbürokratisch via WhatsApp oder E-Mail.</p>
                         <a class="btn btn-gold" href="#kontakt">Kontakt Mieterservice</a>
                     </div>
                     <div class="image-box" data-aos="zoom-in">
-                        <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=1000&auto=format&fit=cover" alt="Wohnraum mieten">
+                        <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=1000&auto=format&fit=crop&w=800" alt="Wohnraum mieten">
                     </div>
                 </div>
             </div>
@@ -111,13 +113,17 @@
     <footer>
         <div class="container">
             <p>© 2026 M.H.IMMOBILIEN</p>
-            <a href="javascript:void(0)" class="impressum-link" onclick="toggleImpressum()">Impressum</a>
+            <div class="footer-links">
+                <a href="javascript:void(0)" onclick="openModal('impressum-modal')">Impressum</a>
+                <span class="sep">|</span>
+                <a href="javascript:void(0)" onclick="openModal('datenschutz-modal')">Datenschutz (DSGVO)</a>
+            </div>
         </div>
     </footer>
 
     <div id="impressum-modal" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="toggleImpressum()">&times;</span>
+            <span class="close-modal" onclick="closeModal('impressum-modal')">&times;</span>
             <h3>Impressum</h3>
             <p><strong>M.H.IMMOBILIEN</strong></p>
             <p>67063 Ludwigshafen am Rhein</p>
@@ -125,6 +131,31 @@
             <hr style="margin:15px 0; border:0; border-top:1px solid #eee;">
             <p>Tel: 015226985548</p>
             <p>E-Mail: hallo@mhimmobilien.com</p>
+        </div>
+    </div>
+
+    <div id="datenschutz-modal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close-modal" onclick="closeModal('datenschutz-modal')">&times;</span>
+            <h3>Datenschutzerklärung</h3>
+            <div class="modal-scroll-text">
+                <p><strong>1. Datenschutz auf einen Blick</strong><br>
+                Wir freuen uns über Ihr Interesse an unserer Website. Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Nachfolgend informieren wir Sie über den Umgang mit Ihren Daten.</p>
+                
+                <p><strong>2. Verantwortliche Stelle</strong><br>
+                M.H.IMMOBILIEN<br>
+                67063 Ludwigshafen am Rhein<br>
+                E-Mail: hallo@mhimmobilien.com</p>
+
+                <p><strong>3. Datenerfassung auf dieser Website</strong><br>
+                Ihre Daten werden dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie per E-Mail oder WhatsApp an uns senden. Wir nutzen diese Daten ausschließlich zur Bearbeitung Ihres Anliegens (Ankauf oder Vermietung) auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO.</p>
+
+                <p><strong>4. Ihre Rechte</strong><br>
+                Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten. Sie haben außerdem ein Recht auf Berichtigung oder Löschung dieser Daten.</p>
+                
+                <p><strong>5. Analyse-Tools und Tools von Drittanbietern</strong><br>
+                Wir verwenden auf dieser Website keine Tracking-Cookies oder Analyse-Tools (wie Google Analytics). Beim Besuch unserer Website werden lediglich technisch notwendige Daten durch den Webhoster übertragen.</p>
+            </div>
         </div>
     </div>
 

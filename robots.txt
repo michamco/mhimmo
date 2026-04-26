@@ -1,0 +1,34 @@
+# robots.txt for M.H.IMMOBILIEN
+
+# Allowiert alle Bots, verbietet Spam-Crawler
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /*.xml$
+
+# Sitemap-Pfad für Google
+
+Sitemap: https://www.mhimmobilien.com/sitemap.xml
+
+# Crawl-Verzögerung für höfliche Bots (optional)
+
+Crawl-delay: 0
+
+# Google-spezifisch
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Block bad bots
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
